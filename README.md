@@ -12,8 +12,7 @@ To determine whether a pixel (x, y) is inside the circle, it can be helpful to r
 Here’s a template to get you started:
 
 ```swift
-// Type alias for the image as a 2D array of booleans
-typealias GreyscaleImage = [[UInt8]]
+typealias GreyscaleImage = // To define 
 
 // Function to generate the image with a centered circle
 func generateCircleImage(width: Int, height: Int, radius: Int) -> GreyscaleImage {
@@ -21,9 +20,7 @@ func generateCircleImage(width: Int, height: Int, radius: Int) -> GreyscaleImage
 
 // Function to print the image to the terminal
 func printImage(_ image: GreyscaleImage) {
-    // Print 'x' for black, inside the circle and '.' for white, outside the circle.
-    //
-    // For pretty alignment depending on your terminal font, you may also want to include
+    // NOTE: For pretty alignment depending on your terminal font, you may also want to include
     // a space after each characteer (e.g. x x x . . .)
 }
 
