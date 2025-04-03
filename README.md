@@ -13,10 +13,10 @@ Here’s a template to get you started:
 
 ```swift
 // Type alias for the image as a 2D array of booleans
-typealias Image = [[UInt8]]
+typealias GreyscaleImage = [[UInt8]]
 
 // Function to generate the image with a centered circle
-func generateCircleImage(width: Int, height: Int, radius: Int) -> Image {
+func generateCircleImage(width: Int, height: Int, radius: Int) -> GreyscaleImage {
     // Initialize a 2D array of size height x width.
     // Calculate the center coordinates (centerX, centerY)
     // For each pixel (x, y), update the value if the pixel is in the circle. 
@@ -26,7 +26,7 @@ func generateCircleImage(width: Int, height: Int, radius: Int) -> Image {
 }
 
 // Function to print the image to the terminal
-func printImage(_ image: Image) {
+func printImage(_ image: GreyscaleImage) {
     // Iterate over each row and column of the image
     // Print 'x' for black, inside the circle and '.' for white, outside the circle.
     // For pretty alignment depending on your terminal font, you may also want to include
@@ -55,7 +55,7 @@ Here’s a template for this part:
 
 ```swift
 // Function to write the image as PPM P2 format to standard output
-func writePPM(_ image: Image, width: Int, height: Int) {
+func writeP2(_ image: Image, width: Int, height: Int) {
     // Print header
     // Print the width and height in ASCII
     // Print the maximum color value (255)
@@ -66,7 +66,7 @@ func writePPM(_ image: Image, width: Int, height: Int) {
 
 // Example usage
 let image = generateCircleImage(width: 64, height: 48, radius: 5)
-writePPM(image, width: 64, height: 48)
+writeP2(image, width: 64, height: 48)
 ```
 
 **Your Task:**
@@ -76,7 +76,7 @@ writePPM(image, width: 64, height: 48)
 
 ### Optional Challenge: Adding Color +/or Color Gradient
 
-If you complete the above tasks and have extra time, enhance your image by adding a color and/or color gradient to the circle. For example, you could print the circle red, or vary the RGB values based on the distance from the center, creating a smooth transition from one color at the center to another at the edge. You’ll need to use a new `ColorImage` representation (e.g., RGB triples instead of greyscale) and update both `generateCircleImage` and `writePPM` accordingly.
+If you complete the above tasks and have extra time, enhance your image by adding a color and/or color gradient to the circle using the P3 format (refer back to the Wiki!). For example, you could print the circle red, or vary the RGB values based on the distance from the center, creating a smooth transition from one color at the center to another at the edge. You’ll need to use a new `ColorImage` representation (e.g., RGB triples instead of greyscale) and update both `generateCircleImage` and `writePPM` accordingly.
 
 ---
 
